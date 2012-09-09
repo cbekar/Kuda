@@ -1,0 +1,30 @@
+
+#ifndef CONFIG_H_
+#define CONFIG_H_
+#ifdef __cplusplus
+extern "C" {
+#endif
+#undef INSTR_ENABLED
+#define INSTR_ENABLED	(1)
+#undef EVENT_ENABLED
+#define EVENT_ENABLED	(1)
+#undef CHECK_ENABLED
+#define CHECK_ENABLED	(1)
+#undef ATOMICITY_ENABLED
+#define ATOMICITY_ENABLED (0)
+#undef CHECK_AT_CPU
+#define CHECK_AT_GPU
+#undef MEMORY_MODEL
+#define MEMORY_MODEL SHARED_MEMORY_MODEL
+#undef NUM_CONCURRENT_KERNELS
+#undef NUM_THREADS
+#undef CHECKED_BLOCK_SIZE
+#undef BLOCK_SIZE
+#define NUM_CONCURRENT_KERNELS (128)
+#define CHECKED_BLOCK_SIZE (1024)
+#define NUM_THREADS (400)
+#define BLOCK_SIZE (CHECKED_BLOCK_SIZE * NUM_CONCURRENT_KERNELS)
+#ifdef __cplusplus
+}
+#endif
+#endif
